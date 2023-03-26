@@ -1,9 +1,11 @@
-export const getlocalStorageData = () => {
-  const contacts = localStorage.getItem('contacts');
+export const getlocalStorageData = item => {
+  const contacts = localStorage.getItem(item);
 
   return JSON.parse(contacts);
 };
 
-export const setlocalStorageData = contacts => {
-  localStorage.setItem('contacts', JSON.stringify(contacts));
+export const setlocalStorageData = (item, contacts) => {
+  localStorage.setItem(item, JSON.stringify(contacts));
 };
+
+export const LSItem = 'contacts';

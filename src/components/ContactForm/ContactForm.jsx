@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './ContactForm.module.css';
@@ -17,9 +17,10 @@ class ContactForm extends Component {
 
   submitHandler = event => {
     event.preventDefault();
-    const newContact = { name: this.state.name, number: this.state.number };
 
-    this.props.onSubmitData(newContact);
+    const { name, number } = this.state;
+
+    this.props.onSubmitData({ name, number });
 
     this.setState({ name: '', number: '' });
   };
